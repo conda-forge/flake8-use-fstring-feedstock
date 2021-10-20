@@ -1,5 +1,5 @@
 {% set name = "flake8-use-fstring" %}
-{% set version = "1.1" %}
+{% set version = "1.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flake8-use-fstring-{{ version }}.tar.gz
-  sha256: a0eea849ffe33fb6903c210c243c0f418da86a530e46cb13e64f1bdb045f22dc
+  sha256: aa3ac530f4a6192ab5883e3c07248ba4e95338cea8f6ab7c1b7868bf89759f99
 
 build:
   number: 0
@@ -20,7 +20,7 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - flake8 ==3.*
+    - flake8 >=3
     - python >=3.6
 
 test:
@@ -28,7 +28,7 @@ test:
     - flake8_use_fstring
   commands:
     - pip check
-    - 'flake8 --version | grep use-fstring'
+    - flake8 --version | grep use-fstring
   requires:
     - pip
 
