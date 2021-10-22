@@ -1,5 +1,5 @@
 {% set name = "flake8-use-fstring" %}
-{% set version = "1.2.1" %}
+{% set version = "1.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flake8-use-fstring-{{ version }}.tar.gz
-  sha256: d946ec744bf32e245d3aca1fbd95ddf9c43b27e69f8d5d26d83610ab5a5f4f2d
+  sha256: 1bd4a409adbb93e64e711fdd26b88759c33792e3899f174edc68ddf7307e81b6
 
 build:
   number: 0
