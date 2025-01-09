@@ -7,21 +7,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flake8-use-fstring-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flake8-use-fstring-{{ version }}.tar.gz
   sha256: 6550bf722585eb97dffa8343b0f1c372101f5c4ab5b07ebf0edd1c79880cdd39
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - flake8 >=3
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -31,6 +31,7 @@ test:
     - flake8 --version | grep use-fstring
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/MichaelKim0407/flake8-use-fstring
